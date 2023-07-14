@@ -1,0 +1,76 @@
+<% if current_user %>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light fw-bold">The Furry Friends Shop</h1>
+        <p class="lead text-body-secondary">Find the most beautiful Furry Friends Here.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Male</a>
+          <a href="#" class="btn btn-secondary my-2">Female</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://nypost.com/wp-content/uploads/sites/2/2023/05/Facetune-05-01-2023-16-03-25.jpg?quality=75&strip=all&w=597" class="img-fluid" />
+            <div class="card-body">
+              <p class="card-text">Beautiful Golden Retriever</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Remove from Cart</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbXVW0VR0oS-xsP6gz-3T2doky8a1bhH88RL46JADnICbzFSuJJikjUOB1OFbU5l10prw&amp;usqp=CAU" class="img-fluid" />
+            <div class="card-body">
+              <p class="card-text">Friendly Fluffy Cat</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Remove from Cart</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% 7.times do %>
+          <div class="col">
+            <div class="card shadow-sm">
+              <%= image_tag "final_candidate_confused_dog_no_image", class: "img-fluid"  %>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Remove from Cart</button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light fw-bold">The Furry Friends Shop</h1>
+        <p class="lead text-body-secondary mb-0">Find the most beautiful Furry Friends Here.</p>
+        <p class="lead text-body-primary fw-bolder mt-3"><%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary btn-sm mx-1 mt-n3" %> to see the page </p>
+      </div>
+    </div>
+  </section>
+<% end %>
